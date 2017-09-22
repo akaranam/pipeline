@@ -63,10 +63,10 @@ deploy:
    - internal/docker-push:
        username: $DOCKER_USERNAME
        password: $DOCKER_PASSWORD
-       cmd: /pipeline/source/hello
+       cmd: /pipeline/source/main
        port: "8080"
        tag: latest
-       repository: cloudnativego/book-hello
+       repository: akaranam/pipeline
        registry: https://registry.hub.docker.com
 
    - cng/cf-deploy:
@@ -76,4 +76,4 @@ deploy:
        org: $ORG
        space: $SPACE
        appname: wercker-step-hello
-       docker_image: cloudnativego/book-hello
+       docker_image: akaranam/main
